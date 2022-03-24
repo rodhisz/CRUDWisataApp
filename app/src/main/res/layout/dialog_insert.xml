@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="30dp">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <EditText
+            android:id="@+id/edt_kategori_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Masukan Kategori ID"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/edt_nama_wisata"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Masukan Nama Wisata"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/edt_harga"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Masukan Harga"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/edt_deskripsi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Masukan Deskripsi"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/edt_kota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Masukan kota"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/edt_provinsi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Masukan provinsi"
+            android:inputType="text" />
+
+
+        <EditText
+            android:id="@+id/edt_alamat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Masukan alamat"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/edt_waktu_buka"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Masukan Waktu Buka"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/edt_latitude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Masukan Latitude"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/edt_long_latitue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Masukan Longlatitude"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/edt_img"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Masukan Img"
+            android:inputType="text" />
+
+    </LinearLayout>
+</ScrollView>
