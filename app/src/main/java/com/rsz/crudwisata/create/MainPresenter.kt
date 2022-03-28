@@ -1,13 +1,23 @@
-package com.rsz.crudwisata
+package com.rsz.crudwisata.create
 
+import com.rsz.crudwisata.MainActivity
 import com.rsz.crudwisata.model.ResponseWisata
 import com.rsz.crudwisata.api.ApiConfig
+import com.rsz.crudwisata.base.BasePresenter
+import com.rsz.crudwisata.updatedelete.UpdateDeleteConstruct
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class MainPresenter(var mainView: MainActivity) : BasePresenter<MainConstruct.view>,
     MainConstruct.Presenter {
+    override fun onAttach(view: MainActivity) {
+        mainView = view
+    }
+
+    override fun onDetach() {
+        mainView
+    }
 
     override fun getAllWisata() {
         ApiConfig.getService().getWisata().enqueue(object : Callback<ResponseWisata> {
@@ -35,7 +45,7 @@ class MainPresenter(var mainView: MainActivity) : BasePresenter<MainConstruct.vi
         })
     }
 
-    fun insertWisata(
+    override fun insertWisata(
         kategoriId: String,
         namaWisata: String,
         harga: String,
@@ -43,10 +53,10 @@ class MainPresenter(var mainView: MainActivity) : BasePresenter<MainConstruct.vi
         kota: String,
         provinsi: String,
         alamat: String,
-        waktuBuka: String,
-        latitue: String,
-        longLatitude: String,
-        image: String,
+        waktu_buka: String,
+        latitude: String,
+        longitude: String,
+        image: String
     ) {
         ApiConfig.getService().InsertDataFood(
             kategoriId,
@@ -56,11 +66,12 @@ class MainPresenter(var mainView: MainActivity) : BasePresenter<MainConstruct.vi
             kota,
             provinsi,
             alamat,
-            waktuBuka,
-            latitue,
-            longLatitude,
+            waktu_buka,
+            latitude,
+            longitude,
             image
         ).enqueue(object : Callback<ResponseWisata> {
+
             override fun onResponse(
                 call: Call<ResponseWisata>,
                 response: Response<ResponseWisata>
@@ -84,15 +95,12 @@ class MainPresenter(var mainView: MainActivity) : BasePresenter<MainConstruct.vi
             }
 
         })
-
     }
 
-    override fun onAttach(view: MainActivity) {
-        mainView = view
-    }
-
-    override fun onDetach() {
-        mainView
+    override fun onAttach(view: UpdateDeleteConstruct) {
+        TODO("Not yet implemented")
     }
 
 }
+
+

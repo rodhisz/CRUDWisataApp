@@ -1,6 +1,8 @@
 package com.rsz.crudwisata.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
 data class ResponseWisata(
 
@@ -14,6 +16,7 @@ data class ResponseWisata(
 	val status: Int? = null
 )
 
+@Parcelize
 data class DataItem(
 
 	@field:SerializedName("provinsi")
@@ -60,4 +63,4 @@ data class DataItem(
 
 	@field:SerializedName("longitude")
 	val longitude: String? = null
-)
+) : Parcelable

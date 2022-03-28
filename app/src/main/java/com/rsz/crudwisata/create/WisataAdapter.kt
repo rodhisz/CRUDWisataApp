@@ -1,12 +1,15 @@
-package com.rsz.crudwisata
+package com.rsz.crudwisata.create
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.rsz.crudwisata.R
 import com.rsz.crudwisata.model.DataItem
+import com.rsz.crudwisata.updatedelete.UpdateDeleteActivity
 import kotlinx.android.synthetic.main.item_row_wisata.view.*
 
 class WisataAdapter(val dataWisata: List<DataItem?>?, val context: Context) :
@@ -27,10 +30,18 @@ class WisataAdapter(val dataWisata: List<DataItem?>?, val context: Context) :
         holder.textWisata.text = dataWisata?.get(position)?.namaWisata
         holder.textkota.text = dataWisata?.get(position)?.kota
         holder.textProvinsi.text = dataWisata?.get(position)?.provinsi
+
         Glide.with(holder.imageWisata)
             .load(dataWisata?.get(position)?.image)
             .error(R.drawable.ic_launcher_background)
             .into(holder.imageWisata)
+
+        //button edit
+        holder.itemView.edt_edit.setOnClickListener {
+            val intent = Intent(context, UpdateDeleteActivity::class.java)
+            intent.putExtra("Data", dataWisata?.get(position))
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {

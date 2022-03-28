@@ -54,6 +54,7 @@
                 android:layout_marginRight="5dp">
 
                 <ImageButton
+                    android:id="@+id/edt_edit"
                     android:src="@drawable/ic_edit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -62,6 +63,7 @@
                     />
 
                 <ImageButton
+                    android:id="@+id/edt_delete"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
