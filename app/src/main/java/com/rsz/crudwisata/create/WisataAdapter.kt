@@ -10,10 +10,12 @@ import com.bumptech.glide.Glide
 import com.rsz.crudwisata.R
 import com.rsz.crudwisata.model.DataItem
 import com.rsz.crudwisata.updatedelete.UpdateDeleteActivity
+import com.rsz.crudwisata.updatedelete.UpdateDeletePresenter
 import kotlinx.android.synthetic.main.item_row_wisata.view.*
 
 class WisataAdapter(val dataWisata: List<DataItem?>?, val context: Context) :
     RecyclerView.Adapter<WisataAdapter.MyViewHolder>() {
+
     class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val imageWisata = view.item_img_wisata
         val textWisata = view.item_text_wisata
@@ -37,7 +39,7 @@ class WisataAdapter(val dataWisata: List<DataItem?>?, val context: Context) :
             .into(holder.imageWisata)
 
         //button edit
-        holder.itemView.edt_edit.setOnClickListener {
+        holder.itemView.btn_edit.setOnClickListener {
             val intent = Intent(context, UpdateDeleteActivity::class.java)
             intent.putExtra("Data", dataWisata?.get(position))
             context.startActivity(intent)

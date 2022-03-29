@@ -54,23 +54,13 @@
                 android:layout_marginRight="5dp">
 
                 <ImageButton
-                    android:id="@+id/edt_edit"
+                    android:id="@+id/btn_edit"
                     android:src="@drawable/ic_edit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="0"
                  android:backgroundTint="@color/teal_200"
                     />
-
-                <ImageButton
-                    android:id="@+id/edt_delete"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:backgroundTint="#FF0000"
-
-                    android:src="@drawable/ic_delete"
-                    android:text="Eit" />
 
             </LinearLayout>
 

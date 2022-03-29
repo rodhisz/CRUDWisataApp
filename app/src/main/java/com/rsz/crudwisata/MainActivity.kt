@@ -12,7 +12,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.rsz.crudwisata.model.DataItem
 import com.rsz.crudwisata.create.MainPresenter
 import com.rsz.crudwisata.create.WisataAdapter
+import com.rsz.crudwisata.updatedelete.UpdateDeletePresenter
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.item_row_wisata.*
 
 class MainActivity : AppCompatActivity() {
 

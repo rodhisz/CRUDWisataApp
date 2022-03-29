@@ -45,4 +45,10 @@ interface ApiService {
         @Field("image") imgWisata: String,
     ): Call<ResponseWisata>
 
+    @FormUrlEncoded
+    @POST("delete-wisata")
+    fun deleteWisata(
+        @Field("id") idWisata: String,
+    ): Call<ResponseWisata>
+
 }

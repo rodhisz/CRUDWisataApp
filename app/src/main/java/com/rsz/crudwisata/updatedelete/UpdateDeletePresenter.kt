@@ -77,4 +77,34 @@ class UpdateDeletePresenter(var updateDeleteView: UpdateDeleteActivity) :
         })
     }
 
+    override fun deleteWisata(idWisata: String) {
+        ApiConfig.getService().deleteWisata(
+            idWisata
+        ).enqueue(object :
+            Callback<ResponseWisata> {
+            override fun onResponse(
+                call: Call<ResponseWisata>,
+                response: Response<ResponseWisata>
+            ) {
+                if (response.isSuccessful || response.code() == 200) {
+                    val msg = response.body()?.message
+                    val sukses = response.body()?.status
+
+                    if (sukses != null) {
+                        updateDeleteView?.showMessageDelete(msg.toString())
+                        updateDeleteView?.onSuccessDelete()
+                    } else {
+                        updateDeleteView?.showMessageDelete(msg.toString())
+                    }
+
+                }
+            }
+
+            override fun onFailure(call: Call<ResponseWisata>, t: Throwable) {
+                updateDeleteView?.showError(t.localizedMessage.toString())
+            }
+
+        })
+    }
+
 }

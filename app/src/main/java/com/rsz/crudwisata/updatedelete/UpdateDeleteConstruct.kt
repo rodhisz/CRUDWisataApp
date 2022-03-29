@@ -28,5 +28,7 @@ interface UpdateDeleteConstruct {
             imgWisata: String
         )
 
+        fun deleteWisata(idWisata: String)
+
     }
 }

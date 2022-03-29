@@ -9,6 +9,7 @@ import com.rsz.crudwisata.model.DataItem
 import kotlinx.android.synthetic.main.activity_update_delete.*
 
 class UpdateDeleteActivity : AppCompatActivity() {
+
     var updateDeletePresenter: UpdateDeletePresenter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,6 +57,10 @@ class UpdateDeleteActivity : AppCompatActivity() {
             )
             Toast.makeText(this, "Berhasil", Toast.LENGTH_SHORT).show()
         }
+
+        btn_delete.setOnClickListener {
+            updateDeletePresenter?.deleteWisata(reciveDataWisata?.id.toString())
+        }
     }
 
 
@@ -69,5 +74,13 @@ class UpdateDeleteActivity : AppCompatActivity() {
 
     fun showError(msg: String) {
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+    }
+
+    fun showMessageDelete(msg: String) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+    }
+
+    fun onSuccessDelete() {
+        finish()
     }
 }
